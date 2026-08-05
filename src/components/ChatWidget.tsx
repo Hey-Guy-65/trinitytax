@@ -55,7 +55,6 @@ export function ChatWidget() {
     send(message.text ?? input);
   };
 
-
   return (
     <>
       {!open && (

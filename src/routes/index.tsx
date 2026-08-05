@@ -319,7 +319,10 @@ function Home() {
                   <div>
                     <dt className="font-semibold">Phone</dt>
                     <dd>
-                      <a className="text-ink-foreground/75 hover:text-accent" href="tel:+17025550143">
+                      <a
+                        className="text-ink-foreground/75 hover:text-accent"
+                        href="tel:+17025550143"
+                      >
                         (702) 555-0143
                       </a>
                     </dd>

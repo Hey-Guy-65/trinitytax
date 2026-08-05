@@ -42,11 +42,9 @@ export function GoogleMap() {
 
   useEffect(() => {
     const browserKey = import.meta.env["VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_BROWSER_KEY"] as
-      | string
-      | undefined;
+      string | undefined;
     const trackingId = import.meta.env["VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_TRACKING_ID"] as
-      | string
-      | undefined;
+      string | undefined;
 
     if (!browserKey) {
       setFailed(true);
