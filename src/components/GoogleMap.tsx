@@ -67,7 +67,11 @@ export function GoogleMap() {
     loadMapsApi(browserKey, trackingId)
       .then(() => {
         if (cancelled || !containerRef.current) return;
-        const google = (window as any).google;
+        const google = getMaps();
+        if (!google) {
+          setFailed(true);
+          return;
+        }
         const map = new google.maps.Map(containerRef.current, {
           center: OFFICE,
           zoom: 15,
@@ -81,6 +85,7 @@ export function GoogleMap() {
           map,
           title: "Trinity Tax Consultants Inc.",
         });
+
       })
       .catch(() => {
         if (!cancelled) setFailed(true);
