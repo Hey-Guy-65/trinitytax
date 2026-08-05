@@ -51,10 +51,10 @@ export function ChatWidget() {
     void sendMessage({ text: value });
   };
 
-  const handleSubmit = (event: FormEvent) => {
-    event.preventDefault();
-    send(input);
+  const handleSubmit = (message: { text?: string }) => {
+    send(message.text ?? input);
   };
+
 
   return (
     <>
