@@ -65,7 +65,7 @@ export function GoogleMap() {
           disableDefaultUI: false,
           mapTypeControl: false,
           streetViewControl: false,
-festival: undefined,
+});
         });
         new google.maps.Marker({
           position: OFFICE,
