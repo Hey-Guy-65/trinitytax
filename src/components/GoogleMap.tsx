@@ -31,7 +31,6 @@ function loadMapsApi(browserKey: string, trackingId?: string) {
       return;
     }
 
-
     window.__trinityInitMap = () => resolve();
 
     const script = document.createElement("script");
@@ -85,7 +84,6 @@ export function GoogleMap() {
           map,
           title: "Trinity Tax Consultants Inc.",
         });
-
       })
       .catch(() => {
         if (!cancelled) setFailed(true);
