@@ -2,11 +2,21 @@ import { useEffect, useRef, useState } from "react";
 
 const OFFICE = { lat: 36.07172, lng: -115.27142 };
 
+type MapsGlobal = {
+  maps: {
+    Map: new (el: HTMLElement, opts: Record<string, unknown>) => unknown;
+    Marker: new (opts: Record<string, unknown>) => unknown;
+  };
+};
+
 declare global {
   interface Window {
-    google?: typeof globalThis extends { google: infer G } ? G : any;
     __trinityInitMap?: () => void;
   }
+}
+
+function getMaps(): MapsGlobal | undefined {
+  return (globalThis as { google?: MapsGlobal }).google;
 }
 
 let scriptPromise: Promise<void> | null = null;
@@ -16,10 +26,11 @@ function loadMapsApi(browserKey: string, trackingId?: string) {
 
   scriptPromise = new Promise<void>((resolve, reject) => {
     if (typeof window === "undefined") return;
-    if ((window as any).google?.maps?.Map) {
+    if (getMaps()?.maps?.Map) {
       resolve();
       return;
     }
+
 
     window.__trinityInitMap = () => resolve();
 
