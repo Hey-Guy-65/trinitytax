@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const OFFICE = { lat: 36.07172, lng: -115.27142 };
+const OFFICE = { lat: 36.0690652, lng: -115.2764426 };
 
 type MapsGlobal = {
   maps: {
