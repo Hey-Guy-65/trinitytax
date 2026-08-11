@@ -308,9 +308,9 @@ function Home() {
                   <div>
                     <dt className="font-semibold">Address</dt>
                     <dd className="text-ink-foreground/75">
-                      8485 W Sunset Road
+                      8485 W Sunset Road, Suite 206
                       <br />
-                      Las Vegas, NV
+                      Las Vegas, NV 89113
                     </dd>
                   </div>
                 </div>
@@ -353,7 +353,7 @@ function Home() {
 
               <Button asChild variant="gold" size="xl" className="mt-9">
                 <a
-                  href="https://www.google.com/maps/dir/?api=1&destination=8485+W+Sunset+Road,+Las+Vegas,+NV"
+                  href="https://www.google.com/maps/dir/?api=1&destination=8485+W+Sunset+Road+Suite+206,+Las+Vegas,+NV+89113"
                   target="_blank"
                   rel="noreferrer"
                 >
