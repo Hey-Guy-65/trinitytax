@@ -97,7 +97,7 @@ export function GoogleMap() {
   if (failed) {
     return (
       <div className="flex h-full w-full items-center justify-center bg-muted px-6 text-center text-sm text-muted-foreground">
-        Map unavailable right now — find us at 8485 W Sunset Road, Las Vegas, NV.
+        Map unavailable right now — find us at 8485 W Sunset Road, Suite 206, Las Vegas, NV 89113.
       </div>
     );
   }
