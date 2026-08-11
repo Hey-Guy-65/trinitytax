@@ -141,7 +141,7 @@ export function ChatWidget() {
 
               {error && (
                 <p className="text-sm text-destructive">
-                  Sorry, something went wrong. Please try again or call us at (702) 555-0143.
+                  Sorry, something went wrong. Please try again or call us at (702) 840-3808.
                 </p>
               )}
             </ConversationContent>
