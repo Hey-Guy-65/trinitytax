@@ -177,7 +177,7 @@ function Home() {
               </div>
               <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-ink-foreground/70">
                 <span className="flex items-center gap-2">
-                  <BadgeCheck className="size-4 text-accent" /> Federally licensed Enrolled Agents
+                  <BadgeCheck className="size-4 text-accent" /> Authorized to Practice Before the IRS
                 </span>
                 <span className="flex items-center gap-2">
                   <ShieldCheck className="size-4 text-accent" /> Confidential case review
