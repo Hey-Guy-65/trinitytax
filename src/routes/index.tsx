@@ -335,9 +335,9 @@ function Home() {
                     <dd>
                       <a
                         className="text-ink-foreground/75 hover:text-accent"
-                        href="mailto:info@trinitytaxconsultants.com"
+                        href="mailto:taxhelp@trinitytaxlv.com"
                       >
-                        info@trinitytaxconsultants.com
+                        taxhelp@trinitytaxlv.com
                       </a>
                     </dd>
                   </div>
