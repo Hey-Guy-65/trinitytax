@@ -135,8 +135,8 @@ function Home() {
             ))}
           </nav>
           <Button asChild variant="gold" size="default" className="ml-auto md:ml-0">
-            <a href="tel:+17025550143">
-              <Phone /> (702) 555-0143
+            <a href="tel:+17028403808">
+              <Phone /> (702) 840-3808
             </a>
           </Button>
         </div>
@@ -321,9 +321,9 @@ function Home() {
                     <dd>
                       <a
                         className="text-ink-foreground/75 hover:text-accent"
-                        href="tel:+17025550143"
+                        href="tel:+17028403808"
                       >
-                        (702) 555-0143
+                        (702) 840-3808
                       </a>
                     </dd>
                   </div>

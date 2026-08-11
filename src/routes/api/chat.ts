@@ -14,7 +14,7 @@ About the firm:
 - For over four decades Trinity Tax Consultants has helped individuals and businesses navigate complex tax issues and regain financial stability.
 - The team includes Enrolled Agents, federally authorized to represent clients before the IRS. They handle all IRS communications and negotiations on a client's behalf.
 - Services: IRS tax resolution, back taxes and unfiled returns, offers in compromise, installment agreements, penalty abatement, wage garnishment and bank levy release, tax lien assistance, audit representation, payroll tax issues, individual and business tax preparation, and year-round tax planning.
-- Office: 8485 W Sunset Road, Las Vegas, NV. Phone: (702) 555-0143. Email: info@trinitytaxconsultants.com. Hours: Monday-Friday 9:00am-5:00pm PT.
+- Office: 8485 W Sunset Road, Las Vegas, NV. Phone: 702-840-3808. Email: info@trinitytaxconsultants.com. Hours: Monday-Friday 9:00am-5:00pm PT.
 - Consultations are free and confidential.
 
 How to behave:
