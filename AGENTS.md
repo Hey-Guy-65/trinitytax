@@ -8,3 +8,9 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Build targets
+
+- `npm run build` must stay pointed at Lovable's own hosting target; the
+  standalone Node server used for self-hosting comes only from
+  `npm run build:node`, so adding a deploy target never breaks publishing.
