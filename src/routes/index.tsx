@@ -346,7 +346,7 @@ function Home() {
                   <Clock className="mt-0.5 size-5 shrink-0 text-accent" />
                   <div>
                     <dt className="font-semibold">Hours</dt>
-                    <dd className="text-ink-foreground/75">Monday – Friday, 10:00 AM – 5:00 PM PT</dd>
+                    <dd className="text-ink-foreground/75">Monday – Friday, 9:00 AM – 5:00 PM PT</dd>
                   </div>
                 </div>
               </dl>
