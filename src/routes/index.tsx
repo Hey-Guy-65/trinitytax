@@ -211,6 +211,34 @@ function Home() {
           </div>
         </section>
 
+        {/* Client portals */}
+        <section className="mx-auto max-w-6xl px-5 pt-20">
+          <div className="rounded-xl border border-border bg-card p-8 shadow-[var(--shadow-soft)] md:flex md:items-center md:justify-between md:gap-10">
+            <div>
+              <p className="eyebrow text-muted-foreground">Existing clients</p>
+              <div className="gold-rule mt-4" />
+              <h2 className="mt-5 text-2xl sm:text-3xl">Client resources</h2>
+              <p className="mt-2 max-w-md text-sm text-muted-foreground">
+                Access your secure client portal or file your return online.
+              </p>
+            </div>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row md:mt-0">
+              {/* TODO: replace href with the Canopy portal link */}
+              <Button asChild variant="gold" size="xl">
+                <a href="#">
+                  Canopy Client Login Portal <ArrowRight />
+                </a>
+              </Button>
+              {/* TODO: replace href with the Drake self-service link */}
+              <Button asChild variant="default" size="xl">
+                <a href="#">
+                  Drake Self-Service Tax Return <ArrowRight />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* About */}
         <section id="about" className="mx-auto max-w-6xl px-5 py-24">
           <div className="grid gap-12 md:grid-cols-[0.9fr_1.1fr]">
