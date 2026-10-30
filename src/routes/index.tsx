@@ -3,7 +3,6 @@ import {
   ArrowRight,
   BadgeCheck,
   Building2,
-  CalendarClock,
   Clock,
   FileWarning,
   Gavel,
@@ -246,7 +245,7 @@ function Home() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <CalendarClock /> Zoom Scheduler <ArrowRight />
+                  Zoom Scheduler <ArrowRight />
                 </a>
               </Button>
             </div>
