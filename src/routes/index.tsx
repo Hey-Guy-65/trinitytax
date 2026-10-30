@@ -233,12 +233,6 @@ function Home() {
                   Canopy Client Login Portal <ArrowRight />
                 </a>
               </Button>
-              {/* TODO: replace href with the Drake self-service link */}
-              <Button asChild variant="default" size="xl" className="w-full">
-                <a href="#">
-                  Drake Self-Service Tax Return <ArrowRight />
-                </a>
-              </Button>
               <Button asChild variant="default" size="xl" className="w-full">
                 <a
                   href="https://scheduler.zoom.us/d/imp1mylq/appointment-with-ea"

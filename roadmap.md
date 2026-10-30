@@ -5,7 +5,6 @@
 - [x] Wire the Zoom Scheduler button to https://scheduler.zoom.us/d/imp1mylq/appointment-with-ea
 - [x] Wire the Canopy Client Login Portal button to https://trinitytaxlv.clientportal.com/#/login?redirect_url=https%3A%2F%2Ftrinitytaxlv.clientportal.com%2F
 - [x] Make the three buttons visually cohesive (single gold primary + matching charcoal secondaries).
-- [ ] Wire the Drake self-service link (currently points at `#`).
 
 ## GoDaddy handoff
 
