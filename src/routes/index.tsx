@@ -219,8 +219,7 @@ function Home() {
               <div className="gold-rule mt-4" />
               <h2 className="mt-5 text-2xl sm:text-3xl">Client resources</h2>
               <p className="mt-2 max-w-md text-sm text-muted-foreground">
-                Access your secure client portal, file your return online, or book a time to speak
-                with us.
+                Access your secure client portal or book a time to speak with us.
               </p>
             </div>
             <div className="mt-6 flex w-full flex-col gap-3 md:mt-0 md:w-80 md:shrink-0">
@@ -231,12 +230,6 @@ function Home() {
                   rel="noreferrer"
                 >
                   Canopy Client Login Portal <ArrowRight />
-                </a>
-              </Button>
-              {/* TODO: replace href with the Drake self-service link */}
-              <Button asChild variant="default" size="xl" className="w-full">
-                <a href="#">
-                  Drake Self-Service Tax Return <ArrowRight />
                 </a>
               </Button>
               <Button asChild variant="default" size="xl" className="w-full">
