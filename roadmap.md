@@ -2,7 +2,8 @@
 
 ## Client resources buttons
 - [x] Add a third "Zoom Scheduler" button to the Client resources area.
-- [ ] Wire real destinations: Canopy portal link, Drake self-service link, Zoom scheduler link (all three currently point at `#`).
+- [x] Wire the Zoom Scheduler button to https://scheduler.zoom.us/d/imp1mylq/appointment-with-ea
+- [ ] Wire real destinations for the Canopy portal link and the Drake self-service link (both currently point at `#`).
 
 ## GoDaddy handoff
 
