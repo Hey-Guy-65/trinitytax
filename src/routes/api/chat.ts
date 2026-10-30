@@ -74,7 +74,7 @@ export const Route = createFileRoute("/api/chat")({
               },
             ];
           });
-        if (messages.length === 0 || messages[messages.length - 1].role !== "user") {
+        if (messages.length === 0 || messages[messages.length - 1]?.role !== "user") {
           return new Response("Messages are required", { status: 400 });
         }
 
