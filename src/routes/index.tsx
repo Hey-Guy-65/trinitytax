@@ -237,9 +237,12 @@ function Home() {
                   Drake Self-Service Tax Return <ArrowRight />
                 </a>
               </Button>
-              {/* TODO: replace href with the Zoom scheduler link */}
               <Button asChild variant="outline" size="xl" className="w-full">
-                <a href="#">
+                <a
+                  href="https://scheduler.zoom.us/d/imp1mylq/appointment-with-ea"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <CalendarClock /> Zoom Scheduler <ArrowRight />
                 </a>
               </Button>
