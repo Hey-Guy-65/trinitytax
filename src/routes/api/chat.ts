@@ -35,14 +35,52 @@ export const Route = createFileRoute("/api/chat")({
   server: {
     handlers: {
       POST: async ({ request }) => {
-        const { messages } = (await request.json()) as ChatRequestBody;
-        if (!Array.isArray(messages)) {
+        let body: ChatRequestBody;
+        try {
+          body = (await request.json()) as ChatRequestBody;
+        } catch {
+          return new Response("Invalid request", { status: 400 });
+        }
+        const raw = body.messages;
+        if (!Array.isArray(raw)) {
+          return new Response("Messages are required", { status: 400 });
+        }
+
+        // Rebuild messages server-side: only user/assistant roles, text parts only,
+        // bounded length. Client-supplied system messages or other parts are dropped.
+        const messages: UIMessage[] = raw
+          .slice(-30)
+          .flatMap((m, i): UIMessage[] => {
+            if (!m || typeof m !== "object") return [];
+            const role = (m as { role?: unknown }).role;
+            if (role !== "user" && role !== "assistant") return [];
+            const parts = (m as { parts?: unknown }).parts;
+            if (!Array.isArray(parts)) return [];
+            const text = parts
+              .filter(
+                (p): p is { type: "text"; text: string } =>
+                  !!p && typeof p === "object" && p.type === "text" && typeof p.text === "string",
+              )
+              .map((p) => p.text)
+              .join("\n")
+              .slice(0, 4000);
+            if (!text.trim()) return [];
+            const id = (m as { id?: unknown }).id;
+            return [
+              {
+                id: typeof id === "string" ? id.slice(0, 100) : `m${i}`,
+                role,
+                parts: [{ type: "text", text }],
+              },
+            ];
+          });
+        if (messages.length === 0 || messages[messages.length - 1].role !== "user") {
           return new Response("Messages are required", { status: 400 });
         }
 
         const key = process.env["LOVABLE_API_KEY"];
         if (!key) {
-          return new Response("Missing LOVABLE_API_KEY", { status: 500 });
+          return new Response("Service unavailable", { status: 500 });
         }
 
         const initialRunId = getLovableAiGatewayRunId(request);
@@ -51,7 +89,7 @@ export const Route = createFileRoute("/api/chat")({
         const result = streamText({
           model: gateway("google/gemini-3.6-flash"),
           system: SYSTEM_PROMPT,
-          messages: await convertToModelMessages(messages as UIMessage[]),
+          messages: await convertToModelMessages(messages),
         });
 
         const response = result.toUIMessageStreamResponse({
