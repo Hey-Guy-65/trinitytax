@@ -225,9 +225,12 @@ function Home() {
               </p>
             </div>
             <div className="mt-6 flex w-full flex-col gap-3 md:mt-0 md:w-80 md:shrink-0">
-              {/* TODO: replace href with the Canopy portal link */}
               <Button asChild variant="gold" size="xl" className="w-full">
-                <a href="#">
+                <a
+                  href="https://trinitytaxlv.clientportal.com/#/login?redirect_url=https%3A%2F%2Ftrinitytaxlv.clientportal.com%2F"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Canopy Client Login Portal <ArrowRight />
                 </a>
               </Button>
@@ -237,7 +240,7 @@ function Home() {
                   Drake Self-Service Tax Return <ArrowRight />
                 </a>
               </Button>
-              <Button asChild variant="outline" size="xl" className="w-full">
+              <Button asChild variant="default" size="xl" className="w-full">
                 <a
                   href="https://scheduler.zoom.us/d/imp1mylq/appointment-with-ea"
                   target="_blank"
