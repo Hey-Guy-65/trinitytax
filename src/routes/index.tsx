@@ -404,7 +404,7 @@ function Home() {
       </main>
 
       <footer className="border-t border-border bg-background">
-        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 pt-10 pb-28 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
             <img src={logo.url} alt="" className="size-10" />
             <div>
@@ -416,7 +416,8 @@ function Home() {
           </div>
           <p className="max-w-md text-xs leading-relaxed text-muted-foreground">
             © {new Date().getFullYear()} Trinity Tax Consultants Inc. Information on this site is
-            general in nature and is not tax or legal advice. Sample website for demonstration.
+            general in nature and is not tax or legal advice. Only Enrolled Agents can provide tax
+            or legal advice, and only during scheduled appointments.
           </p>
         </div>
       </footer>
