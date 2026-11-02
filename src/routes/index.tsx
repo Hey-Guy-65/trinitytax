@@ -416,8 +416,8 @@ function Home() {
           </div>
           <p className="max-w-md text-xs leading-relaxed text-muted-foreground">
             © {new Date().getFullYear()} Trinity Tax Consultants Inc. Information on this site is
-            general in nature and is not tax or legal advice. Only Enrolled Agents can provide tax
-            or legal advice, and only during scheduled appointments.
+            general in nature and is not tax or legal advice. Our Enrolled Agents can provide tax
+            guidance during scheduled appointments, but not legal advice.
           </p>
         </div>
       </footer>
