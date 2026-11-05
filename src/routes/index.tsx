@@ -18,6 +18,7 @@ import {
 
 import heroImage from "@/assets/hero-office.jpg";
 import logo from "@/assets/trinity-logo.png.asset.json";
+import { AuthButton } from "@/components/AuthButton";
 import { ChatWidget } from "@/components/ChatWidget";
 import { GoogleMap } from "@/components/GoogleMap";
 import { Button } from "@/components/ui/button";
@@ -134,11 +135,14 @@ function Home() {
               </a>
             ))}
           </nav>
-          <Button asChild variant="gold" size="default" className="ml-auto md:ml-0">
-            <a href="tel:+17028403808">
-              <Phone /> (702) 840-3808
-            </a>
-          </Button>
+          <div className="ml-auto flex items-center gap-2 md:ml-0">
+            <AuthButton />
+            <Button asChild variant="gold" size="default">
+              <a href="tel:+17028403808">
+                <Phone /> (702) 840-3808
+              </a>
+            </Button>
+          </div>
         </div>
       </header>
 
