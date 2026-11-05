@@ -31,7 +31,7 @@ export function AuthButton() {
   }
 
   const name =
-    (user.user_metadata?.full_name as string | undefined) || user.email || "Account";
+    (user.user_metadata?.["full_name"] as string | undefined) || user.email || "Account";
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
