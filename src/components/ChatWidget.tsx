@@ -18,6 +18,7 @@ import {
 } from "@/components/ai-elements/prompt-input";
 import { Shimmer } from "@/components/ai-elements/shimmer";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
 
 const SUGGESTIONS = [
   "I got an IRS notice — what now?",
@@ -31,7 +32,14 @@ export function ChatWidget() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const { messages, sendMessage, status, error } = useChat({
-    transport: new DefaultChatTransport({ api: "/api/chat" }),
+    transport: new DefaultChatTransport({
+      api: "/api/chat",
+      headers: async () => {
+        const { data } = await supabase.auth.getSession();
+        const token = data.session?.access_token;
+        return token ? { Authorization: `Bearer ${token}` } : {};
+      },
+    }),
   });
 
   const busy = status === "submitted" || status === "streaming";
