@@ -83,6 +83,41 @@ export const Route = createFileRoute("/api/chat")({
           return new Response("Messages are required", { status: 400 });
         }
 
+        // Identify the signed-in chatter (if any) so their conversation can be saved.
+        const authHeader = request.headers.get("authorization");
+        const token = authHeader?.startsWith("Bearer ") ? authHeader.slice(7) : null;
+        let userId: string | null = null;
+        if (token) {
+          try {
+            const { createClient } = await import("@supabase/supabase-js");
+            const userClient = createClient(
+              process.env["SUPABASE_URL"]!,
+              process.env["SUPABASE_PUBLISHABLE_KEY"]!,
+              {
+                global: { headers: { Authorization: `Bearer ${token}` } },
+                auth: { storage: undefined, persistSession: false, autoRefreshToken: false },
+              },
+            );
+            const { data } = await userClient.auth.getUser();
+            userId = data.user?.id ?? null;
+          } catch {
+            userId = null;
+          }
+        }
+
+        const lastUserText = messages[messages.length - 1]?.parts
+          .filter((p): p is { type: "text"; text: string } => p.type === "text")
+          .map((p) => p.text)
+          .join("\n")
+          .trim();
+
+        if (userId && lastUserText) {
+          const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+          await supabaseAdmin
+            .from("chat_messages")
+            .insert({ user_id: userId, role: "user", content: lastUserText });
+        }
+
         const key = process.env["LOVABLE_API_KEY"];
         if (!key) {
           return new Response("Service unavailable", { status: 500 });
