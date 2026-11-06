@@ -137,6 +137,25 @@ export const Route = createFileRoute("/api/chat")({
           headers: getLovableAiGatewayResponseHeaders(undefined, {
             ...(initialRunId ? { "X-Lovable-AIG-Run-ID": initialRunId } : {}),
           }),
+          onFinish: async ({ messages: allMessages }) => {
+            if (!userId) return;
+            const reply = allMessages[allMessages.length - 1];
+            if (reply?.role !== "assistant") return;
+            const text = reply.parts
+              .filter((p): p is { type: "text"; text: string } => p.type === "text")
+              .map((p) => p.text)
+              .join("\n")
+              .trim();
+            if (!text) return;
+            try {
+              const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+              await supabaseAdmin
+                .from("chat_messages")
+                .insert({ user_id: userId, role: "assistant", content: text });
+            } catch {
+              // Saving the transcript must never break the chat stream.
+            }
+          },
         });
 
         return withLovableAiGatewayRunIdHeader(response, gateway);
