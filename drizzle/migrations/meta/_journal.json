@@ -8,6 +8,13 @@
       "when": 1793912719820,
       "tag": "0000_create_profiles_table",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1794003898754,
+      "tag": "0001_create_chat_messages_and_user_roles",
+      "breakpoints": true
     }
   ]
 }
