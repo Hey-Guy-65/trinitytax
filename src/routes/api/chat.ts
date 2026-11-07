@@ -37,6 +37,7 @@ Always guide visitors to contact Trinity directly (this is required in EVERY rep
 type ChatRequestBody = { messages?: unknown };
 
 export const Route = createFileRoute("/api/chat")({
+  staticData: { sitemap: false },
   server: {
     handlers: {
       POST: async ({ request }) => {

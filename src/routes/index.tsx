@@ -24,6 +24,7 @@ import { GoogleMap } from "@/components/GoogleMap";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Trinity Tax Consultants Inc. | IRS Tax Resolution in Las Vegas" },
